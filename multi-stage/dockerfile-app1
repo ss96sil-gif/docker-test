@@ -1,0 +1,6 @@
+FROM ubuntu:14.04
+RUN apt-get update -y && apt-get install nginx -y
+COPY appstart.sh /
+RUN useradd user01
+USER user01
+ENTRYPOINT ["/appstart.sh"]
